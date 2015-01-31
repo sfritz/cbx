@@ -1,7 +1,5 @@
-require 'yaml'
 require 'hurley'
-require 'cb_auth'
-require 'json_response'
+require 'handlers'
 require 'models'
 
 module CbX
