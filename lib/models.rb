@@ -1,0 +1,6 @@
+require 'models/account'
+require 'models/currency'
+require 'models/order'
+require 'models/product'
+require 'models/subscribe'
+require 'models/transfer'
