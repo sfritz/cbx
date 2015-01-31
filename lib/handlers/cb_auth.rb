@@ -9,7 +9,7 @@ class CbAuth
   HASH       = 'sha256'.freeze
 
   def initialize(key:, secret:, passphrase:)
-    @secret     = secret
+    @secret     = Base64.decode64(secret)
     @key        = key
     @passphrase = passphrase
   end
@@ -27,7 +27,7 @@ class CbAuth
   end
 
   def sign_header(req, ts)
-    method  = req.verb#.upcase
+    method  = req.verb.upcase
     path    = req.url.path
     body    = req.body
     message = "#{ts}#{method}#{path}#{body}"
